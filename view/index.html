@@ -17,6 +17,12 @@
 
         <noscript>Diese Seite benötigt Javascript</noscript>
 
+        <!-- Step 1: Magic Door -->
+        <div id="magicDoorTop" class="magicDoor">Klick or scroll</div>
+        <div id="magicDoorBottom" class="magicDoor">me!</div>
+
+        <!-- Content -->
+
         <div id="header">
             <div class="container">
                 <div class="row">
@@ -72,21 +78,21 @@
 
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
-                                        <img src="files/teaser/beratung.jpg" alt="" />
+                                        <img src="files/teaser/beratung.jpg" alt="Beratungsgespräch" />
                                         <div class="carousel-caption">
-
+                                            Kompetente, offene und ehrliche Beratung
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="files/teaser/240_F_86643320_iDoVlibWfcukY9oH6sxJERDBm86ZPOQy.jpg" alt="" />
+                                        <img src="files/teaser/kompetenz.jpg" alt="Kompetenz-Module" />
                                         <div class="carousel-caption">
-                                            Entwicklung von einfacher bis zur hoch komplexen Web-Software
+                                            Unsere kreative, innovative Expertise für Ihr Produkt
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="files/teaser/240_F_83752865_Wjgyq7jCY89sqxj28OlZ3qwwiJfRfp21.jpg" alt="" />
+                                        <img src="files/teaser/websites.jpg" alt="Websites" />
                                         <div class="carousel-caption">
-                                            Offene Kommunikation und ehrliche Beratung
+                                            Erstellen von einfachen Websites bis hoch komplexen Webapplikationen
                                         </div>
                                     </div>
                                 </div>
@@ -681,6 +687,12 @@ Bei der Ignition Groupe GmbH in Frankfurt fing ich als Webdeveloper an, übernah
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.js"></script>
         <script src="js/scripts.min.js"></script>
-
+        <!---->
+        <script type="text/javascript">
+            var jMagicDoors = jQuery(".magicDoor");
+            jMagicDoors.on("click", function() {
+                jMagicDoors.addClass("opened");
+            });
+        </script>
     </body>
 </html>
