@@ -18,8 +18,9 @@
         <noscript>Diese Seite benötigt Javascript</noscript>
 
         <!-- Step 1: Magic Door -->
-        <div id="magicDoorTop" class="magicDoor">Klick or scroll</div>
-        <div id="magicDoorBottom" class="magicDoor">me!</div>
+        <div id="magicDoorTop" class="magicDoor"></div>
+        <div id="magicDoorBottom" class="magicDoor"><div style="text-align: center;transition:         all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955)">Klick mich mal...</div>
+        </div>
 
         <!-- Content -->
 
@@ -691,6 +692,9 @@ Bei der Ignition Groupe GmbH in Frankfurt fing ich als Webdeveloper an, übernah
         <script type="text/javascript">
             var jMagicDoors = jQuery(".magicDoor");
             jMagicDoors.on("click", function() {
+                jMagicDoors.addClass("opened");
+            });
+            jQuery(window).on("scroll", function() {
                 jMagicDoors.addClass("opened");
             });
         </script>
