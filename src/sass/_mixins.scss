@@ -1,0 +1,78 @@
+@mixin blur($px)
+{
+    -webkit-filter: blur($px);
+    -moz-filter: blur($px);
+    -o-filter: blur($px);
+    -ms-filter: blur($px);
+    filter: url('/media/blur.svg#blur');
+    filter: blur($px);
+}
+
+
+@mixin animation($animate)
+{
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max
+    {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max
+        {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName}
+    {
+        @content;
+    }
+    @-moz-keyframes #{$animationName}
+    {
+        @content;
+    }
+    @-o-keyframes #{$animationName}
+    {
+        @content;
+    }
+    @keyframes #{$animationName}
+    {
+        @content;
+    }
+}
+
+@mixin verticalCenter()
+{
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+
+@function calculateRem($px)
+{
+    $remSize: $px / 16px; 
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($px)
+{
+    font-size: $px;
+    font-size: calculateRem($px);
+}
+
+
+@mixin bp($maxPx)
+{
+    @media only screen and (max-width: $maxPx)
+    {
+        @content;
+    }
+}
