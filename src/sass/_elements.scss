@@ -1,0 +1,39 @@
+@import "base";
+@import "compass/css3";
+
+.elementStyleBorder {
+  border: 3px solid $dark_gray;
+  @include border-radius(8px);
+  position: relative;
+
+  &:before
+  {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background-color: $light_gray;
+    position: absolute;
+    top: -3px;
+    left: 10%;
+  }
+
+  &:after
+  {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background-color: $light_gray;
+    position: absolute;
+    bottom: -3px;
+    left: 10%;
+  }
+
+}
+
+.section:nth-child(2n) .elementStyleBorder {
+  border-color: $dark_gray;
+
+  &:before, &:after {
+    border-color: $dark_gray;
+  }
+}

@@ -6,7 +6,7 @@ html, body
     background-color: $background;
     height: 100%;
     width: 100;
-    font-family: 'Sintony', sans-serif;
+    font-family: 'GillSans', sans-serif;
     font-size: 16px;
 
     &.blurry
@@ -21,8 +21,8 @@ html, body
 
 h1, h2, h3, h4, h5, h6
 {
-    color: $highlight;
-    font-family: 'Rufina', serif;
+    color: $red;
+    font-family: 'ChalkDust', serif;
     font-weight: bold;
 }
 
@@ -38,7 +38,7 @@ a
 
     &:hover
         {
-        color: $highlight;
+        color: $red;
     }
 }
 
@@ -159,7 +159,7 @@ a
 
    .close
    {
-       color: $highlight;
+       color: $red;
        position: absolute;
        right: 20px;
        @include font-size(30px);
@@ -198,7 +198,7 @@ a
             
             p
             {
-                color: $highlight;
+                color: $red;
                 @include font-size(18px);
                 font-weight: bold;
                 margin: 30px 0; 
@@ -254,17 +254,18 @@ a
 }
 
 ::selection {
-    background: $highlight;
+    background: $red;
     color: $wood;
 }
 ::-moz-selection {
-    background: $highlight;
+    background: $red;
     color: $wood;
 }
 
 .section
 {
     padding: 60px 0;
+    background-color: $dark_gray;
 
     @include transition-property(filter);
     @include transition-duration(0.2s);
@@ -275,12 +276,14 @@ a
         padding-bottom: 15px;
         margin-bottom: 35px;
         text-align: center;
+        color: $red;
+        font-family: ChalkDust;
 
         &:after
             {
             content: "";
             position: absolute;
-            background-color: $highlight;
+            background-color: $white;
             height: 1px;
             width: 80px;
             bottom: 35px;
@@ -288,35 +291,38 @@ a
             margin-left: -40px;
         }
     }
+
+    &:nth-child(2n) {
+      background-color: $light_gray;
+
+      .section-heading {
+          &:after {
+              background-color: $dark_gray;
+          }
+      }
+    }
 }
 
 #header
 {
-    background: #FAFAF6 url("../files/mainstage.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    //height: 50%;
-    min-height: 300px;
-    
-    @include bp(992px)
-    {
-        height: auto;
-        min-height: auto;
-        background: #FAFAF6;
-        padding: 10px 0;
-        
-        img
-        {
-            width: 100%;
-        }
-    }
+  text-align: center;
 
-    .container, .row, .col-md-12
-    {
-        height: 100%;
-        position: relative;
-    } 
+  .elementStyleBorder {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    display: block;
+    overflow: hidden;
+    height: 17em;
+    width: 100%;
+
+    img {
+      margin-top: -70px;
+      max-width: 100%;
+    }
+  }
 }
 
 #navigation
@@ -326,6 +332,7 @@ a
     left: 0;
     width: 100%;
     z-index: 200;
+    border-bottom: 10px solid $light_gray;
 
     .navbar
     { 
@@ -344,7 +351,7 @@ a
                     &:after
                     {
                         content: "|";
-                        color: $highlight;
+                        color: $red;
                         position: absolute;
                         right: 0;
                         
@@ -372,11 +379,6 @@ a
 
 #highlights
 {
-    .section-heading
-    {
-        color: $dark;
-    }
-
     label, input, textarea
     {
         width: 100%;
@@ -472,13 +474,7 @@ a
             }
         }
     }
-    
-    .section-heading
-    {
-        color: $dark;
-        //margin-bottom: -8px;
-    }
-    
+
     h3
     {
         color: $dark;
@@ -493,7 +489,7 @@ a
     
     .highlight
     {
-        color: $highlight;
+        color: $red;
     }
     
     .service-wrapper
@@ -503,7 +499,7 @@ a
             &:before
             {
                 content: "";
-                background-color: $highlight;
+                background-color: $red;
                 width: 3px;
                 height: 100%;
                 top: -50%;
@@ -520,7 +516,7 @@ a
             &:after
             {
                 content: "";
-                background-color: $highlight;
+                background-color: $red;
                 width: 50px;
                 height: 3px;
                 left: -24px;
@@ -661,7 +657,7 @@ a
 
                 i
                 {
-                    color: $highlight;
+                    color: $red;
 
                     &.fa-cogs
                     {
@@ -684,7 +680,7 @@ a
         
         .spacer
         {
-            color: $highlight;
+            color: $red;
             font-weight: bold;
             @include font-size(28px);
             display: table-cell;
@@ -734,12 +730,7 @@ a
             }
         }
     }
-    
-    .section-heading 
-    {
-        color: white;
-    }
-    
+
     .row-headline
     {
         margin-top: 50px; 
@@ -752,7 +743,7 @@ a
         margin-bottom: 20px;
         padding: 15px 15px 10px 25px;
         //text-align: center;
-        border: 3px solid $highlight;
+        border: 3px solid $red;
         @include border-radius(8px);
         position: relative;
         
@@ -782,7 +773,7 @@ a
         {
             .skill-headline
             {
-                color: $highlight;
+                color: $red;
             }
             
             .icon
@@ -794,7 +785,7 @@ a
 
                     i
                     {
-                        color: $highlight;
+                        color: $red;
                     }
                 }
             }
@@ -838,7 +829,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $highlight;
+                background-color: $red;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -895,7 +886,7 @@ a
 
         p
         {
-            color: $highlight;
+            color: $red;
             @include font-size(18px);
             font-weight: bold;
             margin: 30px 5px; 
@@ -929,11 +920,6 @@ a
 {
     background-color: $background;
     padding-bottom: 30px;
-
-    .section-heading
-    {
-        color: $dark;
-    }
 
     .about-persons
     {
@@ -1004,7 +990,7 @@ a
             
             @include bp(992px)
             {
-                color: $highlight;
+                color: $red;
 
                 @include transition-property(none);
                 @include transition-duration(none);
@@ -1026,7 +1012,7 @@ a
 
             h4
             {
-                color: $highlight;
+                color: $red;
             }
         }
 
@@ -1043,7 +1029,7 @@ a
             {
                 img
                 {
-                    border: 5px solid $highlight;
+                    border: 5px solid $red;
                     margin-top: 0;
                     height: 100%;
                     width: 100%;
@@ -1052,7 +1038,7 @@ a
 
             h4
             {
-                color: $highlight;
+                color: $red;
             }
         }         
         
@@ -1064,7 +1050,7 @@ a
     
     .about-detail
     {
-        border-top: 3px solid $highlight;
+        border-top: 3px solid $red;
         padding-top: 40px;
         margin-top: 40px;
         vertical-align: middle;
@@ -1118,12 +1104,6 @@ a
 
 #contact
 {
-    background-color: $dark;
-    
-    .section-heading
-    {
-        color: $background;
-    }
 
     .idea-form
     {
@@ -1185,11 +1165,9 @@ a
 
         input[type=submit]
         { 
-            border: 1px solid $highlight;
-            color: $highlight;
-            font-family: 'Sintony', sans-serif;
+            border: 1px solid $light_gray;
+            color: $red;
             font-weight: normal;
-            background-color: $dark;
             padding: 10px 20px;
             margin: 0;
             width: auto; 
