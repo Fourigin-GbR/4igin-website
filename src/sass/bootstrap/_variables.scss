@@ -369,10 +369,10 @@ $navbar-default-bg:                $dark !default;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
-$navbar-default-link-color:                #e7e7e7 !default;
-$navbar-default-link-hover-color:          #e7e7e7 !default;
+$navbar-default-link-color:                $light_gray !default;
+$navbar-default-link-hover-color:          $light_gray !default;
 $navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #e7e7e7 !default;
+$navbar-default-link-active-color:         $light_gray !default;
 //$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-active-bg:            $dark !default;
 $navbar-default-link-disabled-color:       #ccc !default;
