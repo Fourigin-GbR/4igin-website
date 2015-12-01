@@ -22,7 +22,6 @@ html, body
 h1, h2, h3, h4, h5, h6
 {
     color: $red;
-    font-family: 'ChalkDust', serif;
     font-weight: bold;
 }
 
@@ -276,14 +275,13 @@ a
         padding-bottom: 15px;
         margin-bottom: 35px;
         text-align: center;
-        color: $red;
-        font-family: ChalkDust;
+        color: $light_gray;
 
         &:after
             {
             content: "";
             position: absolute;
-            background-color: $white;
+            background-color: $light_gray;
             height: 1px;
             width: 80px;
             bottom: 35px;
@@ -295,7 +293,15 @@ a
     &:nth-child(2n) {
       background-color: $light_gray;
 
+      *, *:before, *:after {
+        border-color: $dark_gray !important;
+        background-color: $light_gray !important;
+      }
+
       .section-heading {
+
+          color: $dark_gray;
+
           &:after {
               background-color: $dark_gray;
           }
@@ -461,7 +467,6 @@ a
 
 #services
 {
-    //background-color: $dark;
     position: relative;
     
     @include bp(992px)
@@ -475,15 +480,9 @@ a
         }
     }
 
-    h3
-    {
-        color: $dark;
-    }
-
     .subheadline
     {
         @include font-size(24px);
-        color: $dark;
         margin-bottom: 70px;
     }
     
@@ -494,43 +493,6 @@ a
     
     .service-wrapper
     {
-        &:last-of-type
-        {
-            &:before
-            {
-                content: "";
-                background-color: $red;
-                width: 3px;
-                height: 100%;
-                top: -50%;
-                left: -1px;
-                position: absolute;
-                
-                @include bp(992px)
-                {
-                    background-color: transparent;
-                    @include opacity(0);
-                }
-            }
-            
-            &:after
-            {
-                content: "";
-                background-color: $red;
-                width: 50px;
-                height: 3px;
-                left: -24px;
-                position: absolute;
-                top: 50%;
-                
-                @include bp(992px)
-                {
-                    background-color: transparent;
-                    @include opacity(0);
-                }
-            }
-        }
-        
         &.first
         {
             &:last-of-type
@@ -545,9 +507,8 @@ a
     
     .service
     {
-        color: $dark;
         @include font-size(18px);
-        border: 3px solid $dark;
+        border: 3px solid $light_gray;
         @include border-radius(8px);
         padding: 15px 15px;
         text-align: center;
@@ -558,7 +519,7 @@ a
         width: 500px;
         position: relative; 
         display: table;
-        
+
         @include bp(1199px)
         {
             max-width: 420px;
@@ -585,18 +546,17 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $background;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 left: 0;
             }
-            
             &:after
             {
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $background;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 right: 0;
@@ -608,21 +568,29 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $background;
+            background-color: $dark_gray;
             position: absolute;
             top: 0;
             left: 10%;
+
+            &:nth-child(2n) {
+              background-color: $light_gray;
+            }
         }
-        
+
         &:after
         {
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $background;
+            background-color: $dark_gray;
             position: absolute;
             bottom: 0;
             left: 10%;
+
+            &:nth-child(2n) {
+              background-color: $light_gray;
+            }
         }
 
         .icon
@@ -646,7 +614,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $dark;
+                background-color: $dark_gray;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -718,8 +686,7 @@ a
 
 #skills
 {
-    background-color: $dark;
-    
+
     @include bp(992px)
     {
         .row
@@ -743,7 +710,7 @@ a
         margin-bottom: 20px;
         padding: 15px 15px 10px 25px;
         //text-align: center;
-        border: 3px solid $red;
+        border: 3px solid $light_gray;
         @include border-radius(8px);
         position: relative;
         
@@ -752,7 +719,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark;
+            background-color: $dark_gray;
             position: absolute;
             top: -3px;
             left: 10%;
@@ -763,7 +730,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark;
+            background-color: $dark_gray;
             position: absolute;
             bottom: -3px;
             left: 10%;
@@ -781,7 +748,7 @@ a
 
                 span 
                 {
-                    background-color: $dark;
+                    background-color: $dark_gray;
 
                     i
                     {
@@ -800,7 +767,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 left: -3px;
@@ -811,7 +778,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 right: -3px;
@@ -829,7 +796,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $red;
+                background-color: $light_gray;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -843,7 +810,7 @@ a
 
                 i
                 {
-                    color: $dark;
+                    color: $dark_gray;
                     @include transition-property(all);
                     @include transition-duration(0.5s);
                     @include transition-timing-function(ease-in);
@@ -853,8 +820,7 @@ a
         
         .skill-headline
         {
-            color: white;
-            font-family: 'Sintony', sans-serif;
+            color: $light_gray;
             font-weight: normal;
             @include font-size(18px);
             line-height: 28px;
@@ -918,7 +884,6 @@ a
 
 #about
 {
-    background-color: $background;
     padding-bottom: 30px;
 
     .about-persons
@@ -953,7 +918,7 @@ a
 
             img
             { 
-                border: 5px solid $dark;
+                border: 5px solid $dark_gray;
                 width: 90%;
                 height: 90%;
                 margin-top: 5%;
@@ -978,8 +943,6 @@ a
 
         h4
         {
-            font-family: 'Sintony', sans-serif;
-            color: $dark;
             font-weight: normal;
             margin-top: 15px;
             margin-bottom: 15px;
@@ -1018,7 +981,6 @@ a
 
         .description
         {
-            color: $dark;
             @include font-size(14px);
             padding: 0 10px;
         }
@@ -1084,7 +1046,7 @@ a
 
         img
         {
-            border: 5px solid $dark;
+            border: 5px solid $dark_gray;
 
             @include border-radius(100%);
             
@@ -1117,7 +1079,6 @@ a
 
         label
         {
-            color: $background;
             width: 49%;
             margin-bottom: 10px;
             font-weight: normal;
@@ -1128,15 +1089,8 @@ a
             }
         }
         
-        div
-        {
-            color: $background;
-        }
-
         input, textarea
         {
-            color: $dark;
-            font-family: 'Sintony', sans-serif;
             font-weight: normal;
             border: 1px solid $wood;
             padding: 5px;
@@ -1177,10 +1131,8 @@ a
 
 #footer
 {
-    background-color: $background;
     text-align: center;
     padding: 40px 0;
-    color: $dark;
 
     ul
     {
@@ -1196,7 +1148,6 @@ a
 
             a
             {
-                color: $dark;
                 text-decoration: underline;
             }
 
@@ -1266,13 +1217,8 @@ a
 
 #vision
 {
-    background-color: $dark;
     overflow: hidden;
 
-    .section-heading
-    {
-        color: white;
-    }
 
     @include keyframes(fadeInText)
     {
@@ -1292,7 +1238,6 @@ a
     {
         p
         {
-            color: white;
             letter-spacing: 2px;
             @include font-size(20px);
 
@@ -1354,13 +1299,11 @@ a
 
     p
     {
-        color: $background;
         max-width: 80%;
         margin: 20px auto;
 
         span
         {
-            color: white;
             display: inline-block;
         }
     } 

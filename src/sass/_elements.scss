@@ -6,7 +6,7 @@
   @include border-radius(8px);
   position: relative;
 
-  &:before
+  &.fancy:before
   {
     content: "";
     width: 80%;
@@ -17,7 +17,7 @@
     left: 10%;
   }
 
-  &:after
+  &.fancy:after
   {
     content: "";
     width: 80%;
@@ -33,7 +33,7 @@
 .section:nth-child(2n) .elementStyleBorder {
   border-color: $dark_gray;
 
-  &:before, &:after {
+  &.fancy:before, &.fancy:after {
     border-color: $dark_gray;
   }
 }
