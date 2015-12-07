@@ -80,6 +80,7 @@ jQuery(document).ready(function ()
     var scrollTop = jQuery(document).scrollTop();
     var jAnimationContainer = jQuery(".animationContainer");
     var jEqualizerElements = jQuery(".service");
+    var jCarouselElements = jQuery(".carousel");
     
     for (var j = 0; j < jAboutAccordionTriggerCollection.length; j++)
     {
@@ -136,4 +137,13 @@ jQuery(document).ready(function ()
         }, 500);
         return false;
     });
+
+    /* Carousel Elements */
+    console.info("Init: ", jCarouselElements, jCarouselElements.find(".carouselItem"));
+    jCarouselElements.find(".carouselItem").on("click", function() {
+        var jThis = jQuery(this);
+        console.log("Clicked it");
+        jThis.data("position", "1");
+    });
+
 });

@@ -96,16 +96,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="carousel">
-                            <div class="carouselItem position1">
+                            <div class="carouselItem position1" data-position="1">
                                 <img class="elementStyleBorder" src="files/teaser/01_slider_500.png"/>
                             </div>
-                            <div class="carouselItem position2">
+                            <div class="carouselItem position2" data-position="2">
                                 <img class="elementStyleBorder" src="files/teaser/02_slider_500.jpg"/>
                             </div>
-                            <div class="carouselItem position3">
+                            <div class="carouselItem position3" data-position="3">
                                 <img class="elementStyleBorder" src="files/teaser/03_slider_500.png"/>
                             </div>
-                            <div class="carouselItem position4">
+                            <div class="carouselItem position4" data-position="4">
                                 <img class="elementStyleBorder" src="files/teaser/04_slider_500.jpg"/>
                             </div>
                         </div>
@@ -678,6 +678,29 @@ Bei der Ignition Groupe GmbH in Frankfurt fing ich als Webdeveloper an, übernah
             jQuery(window).on("scroll", function() {
                 jMagicDoors.addClass("opened");
             });
+
+
+            /* Carousel Elements */
+            var jCarouselElements = jQuery(".carousel"),
+                jCarouselItems = jCarouselElements.find(".carouselItem"),
+                iAmountCarouselItems = jCarouselItems.length;
+            //
+            jCarouselItems.on("click", function() {
+                var jThis = jQuery(this),
+                    iClickedItemIndex = jThis.index();
+                //
+                for(var i= 0, iViewPositionIndex = iClickedItemIndex; i<iAmountCarouselItems; i++) {
+                    jCarouselItems.eq(iViewPositionIndex).attr("data-position", "" + (i+1));
+                    //
+                    if(iViewPositionIndex === iAmountCarouselItems-1) {
+                        iViewPositionIndex = 0;
+                    }
+                    else {
+                        iViewPositionIndex++;
+                    }
+                }
+            });
+
         </script>
     </body>
 </html>

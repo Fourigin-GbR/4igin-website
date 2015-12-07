@@ -45,31 +45,48 @@
 
   .carouselItem {
     position: absolute;
-    display: none;
+    transition: all 400ms ease 0s;
+    transform: rotate(0.01deg);
+    animation-delay: 200ms;
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+    cursor: pointer;
+    left: 50%;
+    top: 5%;
+    width: 1%;
+    opacity: 0.2;
+    max-width: 500px;
 
     img {
-      height: 100%;
+      width: 100%;
     }
 
-    &.position1 {
+    &[data-position="1"] {
       left: 50%;
+      top: 0;
+      width: 50%;
       transform: translateX(-50%);
       display: block;
       z-index: 1;
+      cursor: default;
+      opacity: 1;
     }
 
-    &.position2 {
-      left: 75%;
-      transform: translateX(-75%);
+    &[data-position="2"] {
+      right: 15%;
+      //transform: translateX(-75%);
       display: block;
-      height: 65%;
+      width: 37%;
+      top: 5%;
+      opacity: 0.4;
     }
 
-    &.position3 {
-      left: 25%;
-      transform: translateX(-25%);
+    &[data-position="3"] {
+      left: 15%;
+      //transform: translateX(-25%);
       display: block;
-      height: 65%;
+      width: 37%;
+      top: 5%;
+      opacity: 0.4;
     }
 
     img {
