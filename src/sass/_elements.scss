@@ -38,6 +38,28 @@
   }
 }
 /* Carousel */
+
+@keyframes changeCarouselItem1 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes changeCarouselItem2 {
+  from {
+    margin-left: -300px;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+
 .carousel {
   position: relative;
   width: 100%;
@@ -46,8 +68,8 @@
   .carouselItem {
     position: absolute;
     transition: all 400ms ease 0s;
-    transform: rotate(0.01deg);
-    animation-delay: 200ms;
+    //transform: rotate(0.01deg);
+    animation-delay: 10ms;
     animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
     cursor: pointer;
     left: 50%;
@@ -55,6 +77,11 @@
     width: 1%;
     opacity: 0.2;
     max-width: 500px;
+
+    &.changing {
+      animation: changeCarouselItem1;
+      animation-duration: 2s;
+    }
 
     img {
       width: 100%;
@@ -66,27 +93,57 @@
       width: 50%;
       transform: translateX(-50%);
       display: block;
-      z-index: 1;
+      z-index: 5;
       cursor: default;
       opacity: 1;
     }
 
     &[data-position="2"] {
-      right: 15%;
+      right: 13%;
+      left: auto;
       //transform: translateX(-75%);
       display: block;
       width: 37%;
       top: 5%;
-      opacity: 0.4;
+      z-index: 4;
+      opacity: 0.8;
     }
 
     &[data-position="3"] {
-      left: 15%;
+      right: 5%;
+      left: auto;
+      //transform: translateX(-25%);
+      display: block;
+      width: 31%;
+      top: 9%;
+      opacity: 0.3;
+      z-index: 3;
+    }
+
+    &[data-position="4"] {
+      left: 5%;
+      //transform: translateX(-25%);
+      display: block;
+      width: 31%;
+      top: 9%;
+      opacity: 0.3;
+      z-index: 3;
+    }
+
+    &[data-position="5"] {
+      left: 13%;
       //transform: translateX(-25%);
       display: block;
       width: 37%;
       top: 5%;
-      opacity: 0.4;
+      opacity: 0.8;
+      z-index: 4;
+    }
+
+    &.active {
+      z-index: 5;
+      opacity: 1;
+      animation-delay: 0s;
     }
 
     img {

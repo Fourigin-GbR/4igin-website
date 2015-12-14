@@ -32,9 +32,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="elementStyleBorder">
-                            <div class="imageWrapper">
-                                <img src="files/teaser/gruppenbild_1000.jpg" alt="Gruppenbild Fourigin Team"/>
-                            </div>
+                            <img src="files/gruppenbild_1000_x.jpg" alt="Gruppenbild Fourigin Team"/>
                         </div>
                     </div>
                 </div>
@@ -107,6 +105,9 @@
                             </div>
                             <div class="carouselItem position4" data-position="4">
                                 <img class="elementStyleBorder" src="files/teaser/04_slider_500.jpg"/>
+                            </div>
+                            <div class="carouselItem position5" data-position="5">
+                                <img class="elementStyleBorder" src="files/teaser/05_slider_500.jpg"/>
                             </div>
                         </div>
                     </div>
@@ -689,6 +690,10 @@ Bei der Ignition Groupe GmbH in Frankfurt fing ich als Webdeveloper an, übernah
                 var jThis = jQuery(this),
                     iClickedItemIndex = jThis.index();
                 //
+                jCarouselItems.each(function(){jQuery(this).removeClass("active")});
+                jThis.addClass("active");
+
+                //jCarouselItems.addClass("changing");
                 for(var i= 0, iViewPositionIndex = iClickedItemIndex; i<iAmountCarouselItems; i++) {
                     jCarouselItems.eq(iViewPositionIndex).attr("data-position", "" + (i+1));
                     //
@@ -699,6 +704,7 @@ Bei der Ignition Groupe GmbH in Frankfurt fing ich als Webdeveloper an, übernah
                         iViewPositionIndex++;
                     }
                 }
+                jCarouselItems.removeClass("changing");
             });
 
         </script>
