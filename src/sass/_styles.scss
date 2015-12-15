@@ -5,7 +5,7 @@ html, body
 {
     background-color: $background;
     height: 100%;
-    width: 100;
+    width: 100%;
     font-family: 'GillSans', sans-serif;
     font-size: 16px;
 
@@ -21,7 +21,6 @@ html, body
 
 h1, h2, h3, h4, h5, h6
 {
-    color: $red;
     font-weight: bold;
 }
 
@@ -37,7 +36,7 @@ a
 
     &:hover
         {
-        color: $red;
+
     }
 }
 
@@ -253,12 +252,10 @@ a
 }
 
 ::selection {
-    background: $red;
-    color: $wood;
+
 }
 ::-moz-selection {
-    background: $red;
-    color: $wood;
+
 }
 
 .section
@@ -293,7 +290,7 @@ a
     &:nth-child(2n) {
       background-color: $light_gray;
 
-      *, *:before, *:after {
+      &>*, &>*:before, &>*:after {
         border-color: $dark_gray !important;
         background-color: $light_gray !important;
       }
@@ -345,9 +342,14 @@ a
         background-color: $dark; 
         margin-bottom: 0;
         padding: 0;
+        text-align: center;
         
         ul.navbar-nav
         {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+
             li
             {
                 a
@@ -488,7 +490,7 @@ a
     
     .highlight
     {
-        color: $red;
+
     }
     
     .service-wrapper
@@ -508,7 +510,7 @@ a
     .service
     {
         @include font-size(18px);
-        border: 3px solid $light_gray;
+        border: 3px solid $dark_gray;
         @include border-radius(8px);
         padding: 15px 15px;
         text-align: center;
@@ -546,7 +548,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark_gray;
+                background-color: $light_gray;
                 position: absolute;
                 top: 35%;
                 left: 0;
@@ -556,7 +558,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark_gray;
+                background-color: $light_gray;
                 position: absolute;
                 top: 35%;
                 right: 0;
@@ -568,7 +570,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark_gray;
+            background-color: $light_gray;
             position: absolute;
             top: 0;
             left: 10%;
@@ -583,7 +585,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark_gray;
+            background-color: $light_gray;
             position: absolute;
             bottom: 0;
             left: 10%;
@@ -614,7 +616,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $dark_gray;
+                background-color: $dark_gray !important;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -625,7 +627,7 @@ a
 
                 i
                 {
-                    color: $red;
+                    color: $light_gray !important;
 
                     &.fa-cogs
                     {
@@ -975,7 +977,7 @@ a
 
             h4
             {
-                color: $red;
+
             }
         }
 

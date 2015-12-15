@@ -1,5 +1,6 @@
 @import "base";
-@import "compass/css3";
+@import "compass";
+//@import "compass/css3";
 
 .elementStyleBorder {
   border: 3px solid $dark_gray;
@@ -67,7 +68,7 @@
 
   .carouselItem {
     position: absolute;
-    transition: all 400ms ease 0s;
+    transition: width 600ms ease 0s, height 600ms ease 0s, left 600ms ease 0s, top 600ms ease 0s;
     //transform: rotate(0.01deg);
     animation-delay: 10ms;
     animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
@@ -78,29 +79,34 @@
     opacity: 0.2;
     max-width: 500px;
 
-    &.changing {
-      animation: changeCarouselItem1;
-      animation-duration: 2s;
-    }
-
     img {
       width: 100%;
     }
 
+    div.copy {
+      opacity: 0;
+      text-align: center;
+      transition: opacity 400ms ease 0s;
+      margin: 2em 0;
+      color: $light_gray;
+    }
+
     &[data-position="1"] {
-      left: 50%;
+      left: 28%;
       top: 0;
       width: 50%;
-      transform: translateX(-50%);
       display: block;
       z-index: 5;
       cursor: default;
       opacity: 1;
+
+      div.copy {
+        opacity: 1;
+      }
     }
 
     &[data-position="2"] {
-      right: 13%;
-      left: auto;
+      left: 50%;
       //transform: translateX(-75%);
       display: block;
       width: 37%;
@@ -110,8 +116,7 @@
     }
 
     &[data-position="3"] {
-      right: 5%;
-      left: auto;
+      left: 65%;
       //transform: translateX(-25%);
       display: block;
       width: 31%;
