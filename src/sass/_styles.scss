@@ -196,7 +196,7 @@ a
             
             p
             {
-                color: $red;
+                //color: $red;
                 @include font-size(18px);
                 font-weight: bold;
                 margin: 30px 0; 
@@ -854,7 +854,7 @@ a
 
         p
         {
-            color: $red;
+            color: $light_gray;
             @include font-size(18px);
             font-weight: bold;
             margin: 30px 5px; 
@@ -955,7 +955,7 @@ a
             
             @include bp(992px)
             {
-                color: $red;
+                //color: $red;
 
                 @include transition-property(none);
                 @include transition-duration(none);
@@ -993,7 +993,7 @@ a
             {
                 img
                 {
-                    border: 5px solid $red;
+                    border: 5px solid $dark_gray;
                     margin-top: 0;
                     height: 100%;
                     width: 100%;
@@ -1002,7 +1002,8 @@ a
 
             h4
             {
-                color: $red;
+                color: $dark_gray;
+                text-decoration: underline;
             }
         }         
         
@@ -1084,17 +1085,25 @@ a
             width: 49%;
             margin-bottom: 10px;
             font-weight: normal;
-            
+
+            span {
+              color: $light_gray;
+            }
+
             @include bp(480px)
             {
                 width: 100%;
             }
         }
+
+        .label {
+          color: $light_gray;
+        }
         
         input, textarea
         {
             font-weight: normal;
-            border: 1px solid $wood;
+            border: 1px solid $light_gray;
             padding: 5px;
             width: 100%;
 
