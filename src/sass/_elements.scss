@@ -62,97 +62,109 @@
 
 
 .carousel {
-  position: relative;
-  width: 100%;
-  height: 500px;
+  .carouselItems {
+    position: relative;
+    width: 100%;
+    height: 450px;
 
-  .carouselItem {
-    position: absolute;
-    transition: width 600ms ease 0s, height 600ms ease 0s, left 600ms ease 0s, top 600ms ease 0s;
-    //transform: rotate(0.01deg);
-    animation-delay: 10ms;
-    animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
-    cursor: pointer;
-    left: 50%;
-    top: 5%;
-    width: 1%;
-    opacity: 0.2;
-    max-width: 500px;
+    .carouselItem {
+      position: absolute;
+      transition: width 600ms ease 0s, height 600ms ease 0s, left 600ms ease 0s, top 600ms ease 0s;
+      //transform: rotate(0.01deg);
+      animation-delay: 10ms;
+      animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+      cursor: pointer;
+      left: 50%;
+      top: 5%;
+      width: 1%;
+      opacity: 0.2;
+      max-width: 500px;
 
-    img {
-      width: 100%;
-    }
-
-    div.copy {
-      opacity: 0;
-      text-align: center;
-      transition: opacity 400ms ease 0s;
-      margin: 2em 0;
-      color: $light_gray;
-    }
-
-    &[data-position="1"] {
-      left: 28%;
-      top: 0;
-      width: 50%;
-      display: block;
-      z-index: 5;
-      cursor: default;
-      opacity: 1;
+      img {
+        width: 100%;
+      }
 
       div.copy {
+        display: none;
+        opacity: 0;
+        text-align: center;
+        transition: opacity 400ms ease 0s;
+        margin: 2em 0;
+        color: $light_gray;
+      }
+
+      &[data-position="1"] {
+        left: 28%;
+        top: 0;
+        width: 50%;
+        display: block;
+        z-index: 5;
+        cursor: default;
         opacity: 1;
+
+        div.copy {
+          opacity: 1;
+        }
+      }
+
+      &[data-position="2"] {
+        left: 50%;
+        //transform: translateX(-75%);
+        display: block;
+        width: 37%;
+        top: 5%;
+        z-index: 4;
+        opacity: 0.8;
+      }
+
+      &[data-position="3"] {
+        left: 65%;
+        //transform: translateX(-25%);
+        display: block;
+        width: 31%;
+        top: 9%;
+        opacity: 0.3;
+        z-index: 3;
+      }
+
+      &[data-position="4"] {
+        left: 5%;
+        //transform: translateX(-25%);
+        display: block;
+        width: 31%;
+        top: 9%;
+        opacity: 0.3;
+        z-index: 3;
+      }
+
+      &[data-position="5"] {
+        left: 13%;
+        //transform: translateX(-25%);
+        display: block;
+        width: 37%;
+        top: 5%;
+        opacity: 0.8;
+        z-index: 4;
+      }
+
+      &.active {
+        z-index: 5;
+        opacity: 1;
+        animation-delay: 0s;
+      }
+
+      img {
+        max-width: 500px;
       }
     }
 
-    &[data-position="2"] {
-      left: 50%;
-      //transform: translateX(-75%);
-      display: block;
-      width: 37%;
-      top: 5%;
-      z-index: 4;
-      opacity: 0.8;
-    }
+  }
 
-    &[data-position="3"] {
-      left: 65%;
-      //transform: translateX(-25%);
-      display: block;
-      width: 31%;
-      top: 9%;
-      opacity: 0.3;
-      z-index: 3;
-    }
-
-    &[data-position="4"] {
-      left: 5%;
-      //transform: translateX(-25%);
-      display: block;
-      width: 31%;
-      top: 9%;
-      opacity: 0.3;
-      z-index: 3;
-    }
-
-    &[data-position="5"] {
-      left: 13%;
-      //transform: translateX(-25%);
-      display: block;
-      width: 37%;
-      top: 5%;
-      opacity: 0.8;
-      z-index: 4;
-    }
-
-    &.active {
-      z-index: 5;
-      opacity: 1;
-      animation-delay: 0s;
-    }
-
-    img {
-      max-width: 500px;
-    }
+  .carouselTitle {
+    text-align: center;
+    border-radius: 8px;
+    background-color: $dark_gray;
+    color: $light_gray;
+    padding: 0.5em 0;
   }
 }

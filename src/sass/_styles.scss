@@ -238,9 +238,9 @@ a
     padding-top: 20px;
     vertical-align: middle;
 
-    p
+    p, h4, h5
     {
-        color: white;
+        color: $light_gray;
     }
     
     img
@@ -287,7 +287,12 @@ a
         }
     }
 
-    &:nth-child(2n) {
+    p, h3 {
+      color: $light_gray;
+    }
+
+    &:nth-of-type(2n),
+    &#header {
       background-color: $light_gray;
 
       &>*, &>*:before, &>*:after {
@@ -302,6 +307,10 @@ a
           &:after {
               background-color: $dark_gray;
           }
+      }
+
+      p, h3 {
+        color: $dark_gray;
       }
     }
 }
@@ -510,7 +519,7 @@ a
     .service
     {
         @include font-size(18px);
-        border: 3px solid $dark_gray;
+        border: 3px solid $light_gray;
         @include border-radius(8px);
         padding: 15px 15px;
         text-align: center;
@@ -548,7 +557,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $light_gray;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 left: 0;
@@ -558,7 +567,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $light_gray;
+                background-color: $dark_gray;
                 position: absolute;
                 top: 35%;
                 right: 0;
@@ -570,13 +579,13 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $light_gray;
+            background-color: $dark_gray;
             position: absolute;
             top: 0;
             left: 10%;
 
-            &:nth-child(2n) {
-              background-color: $light_gray;
+            &:nth-of-type(2n) {
+              background-color: $dark_gray;
             }
         }
 
@@ -585,13 +594,13 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $light_gray;
+            background-color: $dark_gray;
             position: absolute;
             bottom: 0;
             left: 10%;
 
             &:nth-child(2n) {
-              background-color: $light_gray;
+              background-color: $dark_gray;
             }
         }
 
@@ -616,7 +625,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $dark_gray !important;
+                background-color: $light_gray !important;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -627,7 +636,7 @@ a
 
                 i
                 {
-                    color: $light_gray !important;
+                    color: $dark_gray !important;
 
                     &.fa-cogs
                     {
@@ -712,7 +721,7 @@ a
         margin-bottom: 20px;
         padding: 15px 15px 10px 25px;
         //text-align: center;
-        border: 3px solid $light_gray;
+        border: 3px solid $dark_gray;
         @include border-radius(8px);
         position: relative;
         
@@ -721,7 +730,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark_gray;
+            background-color: $light_gray;
             position: absolute;
             top: -3px;
             left: 10%;
@@ -732,7 +741,7 @@ a
             content: "";
             width: 80%;
             height: 3px;
-            background-color: $dark_gray;
+            background-color: $light_gray;
             position: absolute;
             bottom: -3px;
             left: 10%;
@@ -750,7 +759,7 @@ a
 
                 span 
                 {
-                    background-color: $dark_gray;
+                    background-color: $light_gray;
 
                     i
                     {
@@ -769,7 +778,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark_gray;
+                background-color: $light_gray;
                 position: absolute;
                 top: 35%;
                 left: -3px;
@@ -780,7 +789,7 @@ a
                 content: "";
                 width: 3px;
                 height: 30%;
-                background-color: $dark_gray;
+                background-color: $light_gray;
                 position: absolute;
                 top: 35%;
                 right: -3px;
@@ -798,7 +807,7 @@ a
                 display:inline-block;
                 @include font-size(45px);
                 line-height: 80px;
-                background-color: $light_gray;
+                background-color: $dark_gray;
                 color:white;
                 width: 80px;
                 height: 80px;
@@ -812,7 +821,7 @@ a
 
                 i
                 {
-                    color: $dark_gray;
+                    color: $light_gray;
                     @include transition-property(all);
                     @include transition-duration(0.5s);
                     @include transition-timing-function(ease-in);
@@ -822,7 +831,7 @@ a
         
         .skill-headline
         {
-            color: $light_gray;
+            color: $dark_gray;
             font-weight: normal;
             @include font-size(18px);
             line-height: 28px;
@@ -854,7 +863,7 @@ a
 
         p
         {
-            color: $light_gray;
+            color: $dark_gray;
             @include font-size(18px);
             font-weight: bold;
             margin: 30px 5px; 
@@ -874,7 +883,6 @@ a
 
         .additional-info
         {
-            color: white;
             display: inline-block;
             @include font-size(13px);
             font-weight: normal;
@@ -948,6 +956,7 @@ a
             font-weight: normal;
             margin-top: 15px;
             margin-bottom: 15px;
+            color: $light_gray;
             
             @include transition-property(all);
             @include transition-duration(0.3s);
@@ -993,7 +1002,7 @@ a
             {
                 img
                 {
-                    border: 5px solid $dark_gray;
+                    border: 5px solid $light_gray;
                     margin-top: 0;
                     height: 100%;
                     width: 100%;
@@ -1002,7 +1011,7 @@ a
 
             h4
             {
-                color: $dark_gray;
+                color: $light_gray;
                 text-decoration: underline;
             }
         }         
@@ -1015,7 +1024,7 @@ a
     
     .about-detail
     {
-        border-top: 3px solid $red;
+        border-top: 3px solid $light_gray;
         padding-top: 40px;
         margin-top: 40px;
         vertical-align: middle;
@@ -1039,7 +1048,7 @@ a
 
         p
         {
-            color: $dark;
+            color: $light_gray;
 
             @include bp(480px)
             {
@@ -1049,7 +1058,7 @@ a
 
         img
         {
-            border: 5px solid $dark_gray;
+            border: 5px solid $light_gray;
 
             @include border-radius(100%);
             
@@ -1087,7 +1096,7 @@ a
             font-weight: normal;
 
             span {
-              color: $light_gray;
+              color: $dark_gray;
             }
 
             @include bp(480px)
@@ -1097,13 +1106,13 @@ a
         }
 
         .label {
-          color: $light_gray;
+          color: $dark_gray;
         }
         
         input, textarea
         {
             font-weight: normal;
-            border: 1px solid $light_gray;
+            border: 1px solid $dark_gray;
             padding: 5px;
             width: 100%;
 
@@ -1130,7 +1139,7 @@ a
 
         input[type=submit]
         { 
-            border: 1px solid $light_gray;
+            border: 1px solid $dark_gray;
             color: $red;
             font-weight: normal;
             padding: 10px 20px;
@@ -1156,9 +1165,11 @@ a
         {
             display: inline-block;
             margin-right: 10px;
+            color: $light_gray;
 
             a
             {
+                color: $light_gray;
                 text-decoration: underline;
             }
 
