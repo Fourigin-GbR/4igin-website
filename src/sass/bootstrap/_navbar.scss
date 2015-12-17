@@ -418,7 +418,7 @@
       &:hover,
       &:focus {
         color: $navbar-default-link-hover-color;
-        background-color: $navbar-default-link-hover-bg;
+        background-color: $dark_gray;
       }
     }
     > .active > a {
@@ -426,7 +426,7 @@
       &:hover,
       &:focus {
         color: $navbar-default-link-active-color;
-        background-color: $navbar-default-link-active-bg;
+        background-color: $dark_gray;
       }
     }
     > .disabled > a {

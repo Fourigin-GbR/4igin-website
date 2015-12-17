@@ -7,7 +7,7 @@
  */
 
 
-if($_POST["submit"]) {
+if($_POST["email"]) {
     $recipient="info@fourigin.de";
     $subject="Kontakt-Formular Anfrage von der Webseite";
     $senderName=$_POST["name"];
