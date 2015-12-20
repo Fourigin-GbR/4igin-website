@@ -100,6 +100,39 @@ a
     }
   }
 }
+@media (max-width: 600px) {
+  .magicDoor#magicDoorBottom img {
+    width: 400px;
+    margin-top: -68px;
+  }
+  .magicDoor#magicDoorTop img {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+
+@media (max-width: 400px) {
+  .magicDoor#magicDoorBottom img {
+    width: 300px;
+    margin-top: -51px;
+  }
+  .magicDoor#magicDoorTop img {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+}
+
+@media (max-width: 300px) {
+  .magicDoor#magicDoorBottom img {
+    width: 260px;
+    margin-top: -51px;
+  }
+  .magicDoor#magicDoorTop img {
+    width: 260px;
+    left: calc(50% - 130px);
+  }
+}
+
 
 .iframe-wrapper
 {
@@ -322,6 +355,11 @@ a
   .elementStyleBorder {
     max-width: 1000px;
     margin: 0 auto;
+  }
+
+  img.groupImageTeam {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .imageWrapper {
