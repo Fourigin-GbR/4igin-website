@@ -60,12 +60,21 @@
   }
 }
 
+.placeholder {
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    width: 56%;
+  }
+}
+
 
 .carousel {
   .carouselItems {
-    position: relative;
-    width: 100%;
-    height: 450px;
+    position: absolute;
+    width: 90%;
+    top: 0;
 
     .carouselItem {
       position: absolute;
