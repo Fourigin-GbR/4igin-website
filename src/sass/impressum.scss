@@ -1,0 +1,13 @@
+@import "compass";
+@import "base";
+
+body {
+  background-color: $dark_gray;
+  color: $light_gray;
+  font-family: 'GillSans', 'Trebuchet MS', sans-serif;
+  padding: 4em;
+
+  a {
+    color: $red;
+  }
+}
