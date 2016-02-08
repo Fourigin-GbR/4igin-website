@@ -350,6 +350,12 @@ a
     span.highlight {
       color: $red;
     }
+
+    .container {
+      &.teaser {
+        margin-top: 2rem;
+      }
+    }
 }
 
 #header
